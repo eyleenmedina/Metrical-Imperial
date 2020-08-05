@@ -9,7 +9,19 @@ function ConvertHandler() {
     let index = input.indexOf(input.match(regexUnidad));
     (input.indexOf(input.match(regexNum)) === -1)? result = 1:result = input.slice(0,index);
     console.log(result.match(regexOtro));
-    (result.match(regexOtro).length > 1)? result = "Invalid number": result = eval(result).toFixed(6);
+    result = eval(result).toFixed(6);
+    console.log(result.match(regexOtro).length);
+    if (result.match(regexOtro).length > 1){
+      console.log("B");
+      for (var i=0;i<result.match(regexOtro).length-1;i++){
+        console.log("HOLA")
+        if(result.match(regexOtro)[i]===result.match(regexOtro)[i+1]){
+           result = "Invalid number";
+           return result;
+        }
+      }
+    }
+    console.log(result)
     return result;
   };
   
