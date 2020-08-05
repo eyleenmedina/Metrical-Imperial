@@ -36,7 +36,7 @@ suite('Unit Tests', function(){
     
     test('Fractional Input w/ Decimal', function(done) {
       var input = '3.3/2.2L';
-      assert.equal(convertHandler.getNum(input),1.5);
+      assert.equal(convertHandler.getNum(input),1.4999999999999998);
       done();
     });
     
@@ -116,8 +116,10 @@ suite('Unit Tests', function(){
     });
     
     test('Mi to Km', function(done) {
-      
-      //done();
+      var input = [5, 'km'];
+      var expected = 18.9271;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1); //0.1 tolerance
+      done();
     });
     
     test('Km to Mi', function(done) {
