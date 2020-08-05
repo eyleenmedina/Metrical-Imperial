@@ -8,20 +8,15 @@ function ConvertHandler() {
     var result;
     let index = input.indexOf(input.match(regexUnidad));
     (input.indexOf(input.match(regexNum)) === -1)? result = 1:result = input.slice(0,index);
-    console.log(result.match(regexOtro));
-    result = eval(result).toFixed(6);
-    console.log(result.match(regexOtro).length);
     if (result.match(regexOtro).length > 1){
-      console.log("B");
       for (var i=0;i<result.match(regexOtro).length-1;i++){
-        console.log("HOLA")
         if(result.match(regexOtro)[i]===result.match(regexOtro)[i+1]){
            result = "Invalid number";
            return result;
         }
       }
     }
-    console.log(result)
+    result = eval(result).toFixed(6);
     return result;
   };
   
@@ -31,12 +26,12 @@ function ConvertHandler() {
     let index = input.indexOf(input.match(regexUnidad));
     result = input.slice(index);
     for(var i=0; i<unitBank.length;i++){
-      if (result === unitBank[i]){
+      if (result.toLowerCase() === unitBank[i]){
         valido = true;
       }
     }
-    (valido)? result = result: result = "Invalid unit"
-      return result;
+    (valido)? result = result: result = "Invalid unit";
+    return result;
   };
   
   this.getReturnUnit = function(initUnit) {
