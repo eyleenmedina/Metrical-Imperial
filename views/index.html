@@ -65,7 +65,8 @@
             type: 'get',
             data: $('#convertForm').serialize(),
             success: function(data) {
-              $('#result').text(data.string || data);
+              console.log(data)
+            
               $('#jsonResult').text(JSON.stringify(data));
             }
           });

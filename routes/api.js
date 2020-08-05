@@ -22,8 +22,10 @@ module.exports = function (app) {
         return res.send("{error: Invalid Number}")
       }
       if(initUnit==="Invalid unit"){
+        document.getE
+        $('#result').text("aaaaaaasss");
         return res.json({
-          "error":"Invalid Unit"
+          "error":"invalid unit"
         });
       }
     
