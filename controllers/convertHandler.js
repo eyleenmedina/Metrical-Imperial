@@ -8,13 +8,11 @@ function ConvertHandler() {
     var result;
     var otro = 0;
     let index = input.indexOf(input.match(regexUnidad));
-    console.log(input.indexOf(input.match(regexNum)));
     if (input.indexOf(input.match(regexNum)) === -1){
       result = 1; 
       return result;
     } 
     result = input.slice(0,index);
-    console.log(result.match(regexOtro));
     if (result.match(regexOtro) !== null && result.match(regexOtro).length > 1){
       for (var i=0;i<result.match(regexOtro).length-1;i++){
         if(result.match(regexOtro)[i]===result.match(regexOtro)[i+1]){
@@ -23,7 +21,7 @@ function ConvertHandler() {
         }
       }
     }
-    result = eval(result).toFixed(6);
+    result = eval(result)//.toFixed(6);
     return result;
   };
   
