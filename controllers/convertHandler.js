@@ -7,7 +7,11 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result;
     let index = input.indexOf(input.match(regexUnidad));
-    (input.indexOf(input.match(regexNum)) === -1)? result = 1:result = input.slice(0,index);
+    if (input.indexOf(input.match(regexNum)) === -1){
+      result = 1; 
+      return result;
+    } 
+    result = input.slice(0,index);
     if (result.match(regexOtro).length > 1){
       for (var i=0;i<result.match(regexOtro).length-1;i++){
         if(result.match(regexOtro)[i]===result.match(regexOtro)[i+1]){

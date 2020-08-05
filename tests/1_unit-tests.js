@@ -47,8 +47,8 @@ suite('Unit Tests', function(){
     });
     
     test('No Numerical Input', function(done) {
-      var input = '--/2L';
-      assert.equal(convertHandler.getNum(input),"Invalid number");
+      var input = 'aaL';
+      assert.equal(convertHandler.getNum(input),1);
       done();
     }); 
     
