@@ -24,9 +24,7 @@ module.exports = function (app) {
         });
       }
       if(initUnit==="Invalid unit"){
-        return res.json({
-          "error":"invalid unit",
-        });
+        res.send("Invalido")
       }
     
       var returnNum = convertHandler.convert(initNum, initUnit);
