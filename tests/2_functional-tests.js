@@ -42,6 +42,7 @@ suite('Functional Tests', function() {
           assert.equal(res.body.error, "invalid unit");
           done();
       });
+        });
       
       test('Convert 3/7.2/4kg (invalid number)', function(done) {
        chai.request(server)
@@ -61,6 +62,7 @@ suite('Functional Tests', function() {
           assert.equal(res.status, 200);
           assert.equal(res.body.error, "Invalid Number and Unit");
           done();
+      });
       });
       
       test('Convert kg (no number)', function(done) {
