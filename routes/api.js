@@ -14,6 +14,7 @@ module.exports = function (app) {
       var initUnit = convertHandler.getUnit(input);
     
       if(initUnit==="Invalid unit" && initNum==="Invalid number"){
+        res.statusCode = 400;
         return res.json({
           "error":"Invalid Number and Unit"
         });
