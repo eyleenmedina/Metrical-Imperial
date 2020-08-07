@@ -19,12 +19,13 @@ module.exports = function (app) {
         });
       }
       if(initNum==="Invalid number"){
-        return res.send("{error: Invalid Number}")
+                return res.json({
+          "error":"invalid number",
+        });
       }
       if(initUnit==="Invalid unit"){
         return res.json({
           "error":"invalid unit",
-          "string": "ERROR"
         });
       }
     
