@@ -52,10 +52,7 @@ suite('Functional Tests', function() {
         .query({input: '3/7.2//4kg'})
         .end(function(err, res){
           assert.equal(res.status, 200);
-          assert.equal(res.body.initNum, 10);
-          assert.equal(res.body.initUnit, 'L');
-          assert.approximately(res.body.returnNum, 2.64172, 0.1);
-          assert.equal(res.body.returnUnit, 'gal');
+          assert.equal(res.body, {"error":"invalid number"});
           done();
       });  
       
